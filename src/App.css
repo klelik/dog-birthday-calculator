@@ -1,0 +1,81 @@
+* {
+  font-family: "Acme", sans-serif;
+}
+
+@media all and (max-width: 500px) {
+  .title {
+    font-size: 42px;
+  }
+}
+
+/* .box {
+  background-color: rgba(0, 246, 255, 0.5);
+  box-shadow: none;
+  border-radius: 10px;
+} */
+.box {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(9px);
+  -webkit-backdrop-filter: blur(9px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+}
+
+.title {
+  font-family: "Acme", sans-serif;
+  font-size: 62px;
+  color: white;
+}
+
+.label {
+  font-family: "Acme", sans-serif;
+  font-size: 28px;
+}
+
+.mx-auto {
+  margin: 0 auto;
+}
+
+.vp-spin {
+  display: none !important;
+}
+
+.videoTag {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  z-index: -2;
+  position: absolute;
+}
+.lottie{
+  width: 100px;
+  position: absolute;
+  right: -15px;
+  top:-60px;
+}
+
+.calc{
+  color: white;
+  font-size: 1.25rem;
+  border: white 1px solid;
+  width: 8rem;
+  height: 3rem;
+  text-align: center;
+  /* border-color: white; */
+  background: transparent;
+
+}
+.calc:hover{
+  background-color: white;
+}
+.lottie2{
+  width: 120px;
+  position: absolute;
+  right: 12px;
+  top:-34px;
+  z-index: -1;
+  rotate: 90deg;
+}
+
