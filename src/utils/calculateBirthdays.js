@@ -23,10 +23,10 @@ export default function calculateBirthdays(dateOfBirth) {
   let i = 0;
 
   // Generate array with birthdays
-  while (i < 7) {
+  while (i < 7) {   //7 birthdays
     if (isLeapYear) {
       dogRealBday = new Date(
-        dogRealBday.setTime(dateOfBirth.getTime() + numBeforeBday * (366 / 7) * 86400000)
+        dogRealBday.setTime(dateOfBirth.getTime() + numBeforeBday * (366 / 7) * 86400000) //one more day
       );
     } else {
       dogRealBday = new Date(
@@ -34,9 +34,27 @@ export default function calculateBirthdays(dateOfBirth) {
       );
     }
     let dateformated = dayjs(dogRealBday).format('dddd, D MMMM YYYY');
+    // let dogAge = calculateDogAge(dogRealBday); // Calculate the dog's age in "dog years"
+    // console.log(dogAge);
     dates.push(dateformated);
+    // dates.push({ date: dateformated, age: dogAge });
     numBeforeBday++;
     i++;
+
+
   }
   return dates;
 }
+
+// function calculateDogAge(birthDate) {
+//   const diffInMs = Date.now() - birthDate.getTime();
+//   const ageInHumanYears = new Date(diffInMs).getFullYear() - 1970;
+
+//   if (ageInHumanYears <= 2) {
+//     return ageInHumanYears * 10.5;
+//   } else {
+//     return 21 + (ageInHumanYears - 2) * 4;
+//   }
+// }
+
+// they're aging 5 dog-years per calendar year.
