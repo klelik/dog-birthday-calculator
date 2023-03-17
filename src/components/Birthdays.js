@@ -53,8 +53,7 @@ export default function Birthdays({ name, datesArr }) {
             className="subtitle is-4 mb-2"
             variants={childrenVariants}
           >
-            {/* dates.push({ date: dateformated, age: numBeforeBday + i }); */}
-            {date.date} :  {date.age} years old
+            {date.date} : {date.age} years old
           </motion.p>
         ))}
       </motion.div>

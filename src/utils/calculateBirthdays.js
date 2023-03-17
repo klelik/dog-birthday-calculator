@@ -9,6 +9,7 @@ export default function calculateBirthdays(dateOfBirth) {
   const todayInNum = Math.floor(today / dayInSeconds);
   const daysDiff = todayInNum - totalDays;
   let numBeforeBday = Math.floor(daysDiff / 52) + 1; //how old is the dog before the next birthday + 1 so we dont show the current day as birthday
+
   // Math.floor(daysDiff / 52) === 0 ? 0 :Math.floor(daysDiff / 52) + 1;
   let isLeapYear = false;
   if (today.getFullYear() % 4 === 0) {
@@ -38,6 +39,7 @@ export default function calculateBirthdays(dateOfBirth) {
       );
     }
     let dateformated = dayjs(dogRealBday).format("dddd, D MMMM YYYY");
+
     dates.push({ date: dateformated, age: numBeforeBday + 1 });
     numBeforeBday++; //i should return this  next to dates date[dd/mm/yy][numBeforeBday]
     i++;
