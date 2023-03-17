@@ -1,4 +1,4 @@
-import dayjs from 'dayjs';
+import dayjs from "dayjs";
 
 export default function calculateBirthdays(dateOfBirth) {
   const dates = [];
@@ -7,10 +7,9 @@ export default function calculateBirthdays(dateOfBirth) {
   const totalDays = Math.floor(dateOfBirth / dayInSeconds);
   const today = new Date();
   const todayInNum = Math.floor(today / dayInSeconds);
-
   const daysDiff = todayInNum - totalDays;
-  let numBeforeBday = Math.floor(daysDiff / 52) + 1;
-
+  let numBeforeBday = Math.floor(daysDiff / 52) + 1; //how old is the dog before the next birthday + 1 so we dont show the current day as birthday
+  // Math.floor(daysDiff / 52) === 0 ? 0 :Math.floor(daysDiff / 52) + 1;
   let isLeapYear = false;
   if (today.getFullYear() % 4 === 0) {
     isLeapYear = true;
@@ -23,38 +22,25 @@ export default function calculateBirthdays(dateOfBirth) {
   let i = 0;
 
   // Generate array with birthdays
-  while (i < 7) {   //7 birthdays
+  while (i < 7) {
+    //7 birthdays
     if (isLeapYear) {
       dogRealBday = new Date(
-        dogRealBday.setTime(dateOfBirth.getTime() + numBeforeBday * (366 / 7) * 86400000) //one more day
+        dogRealBday.setTime(
+          dateOfBirth.getTime() + numBeforeBday * (366 / 7) * 86400000
+        ) //one more day
       );
     } else {
       dogRealBday = new Date(
-        dogRealBday.setTime(dateOfBirth.getTime() + numBeforeBday * (365 / 7) * 86400000)
+        dogRealBday.setTime(
+          dateOfBirth.getTime() + numBeforeBday * (365 / 7) * 86400000
+        )
       );
     }
-    let dateformated = dayjs(dogRealBday).format('dddd, D MMMM YYYY');
-    // let dogAge = calculateDogAge(dogRealBday); // Calculate the dog's age in "dog years"
-    // console.log(dogAge);
-    dates.push(dateformated);
-    // dates.push({ date: dateformated, age: dogAge });
-    numBeforeBday++;
+    let dateformated = dayjs(dogRealBday).format("dddd, D MMMM YYYY");
+    dates.push({ date: dateformated, age: numBeforeBday + 1 });
+    numBeforeBday++; //i should return this  next to dates date[dd/mm/yy][numBeforeBday]
     i++;
-
-
   }
   return dates;
 }
-
-// function calculateDogAge(birthDate) {
-//   const diffInMs = Date.now() - birthDate.getTime();
-//   const ageInHumanYears = new Date(diffInMs).getFullYear() - 1970;
-
-//   if (ageInHumanYears <= 2) {
-//     return ageInHumanYears * 10.5;
-//   } else {
-//     return 21 + (ageInHumanYears - 2) * 4;
-//   }
-// }
-
-// they're aging 5 dog-years per calendar year.

@@ -7,7 +7,6 @@
     font-size: 42px;
   }
 }
-
 /* .box {
   background-color: rgba(0, 246, 255, 0.5);
   box-shadow: none;
@@ -49,14 +48,14 @@
   z-index: -2;
   position: absolute;
 }
-.lottie{
+.lottie {
   width: 100px;
   position: absolute;
   right: -15px;
-  top:-60px;
+  top: -60px;
 }
 
-.calc{
+.calc {
   color: white;
   font-size: 1.25rem;
   border: white 1px solid;
@@ -65,17 +64,15 @@
   text-align: center;
   /* border-color: white; */
   background: transparent;
-
 }
-.calc:hover{
+.calc:hover {
   background-color: white;
 }
-.lottie2{
+.lottie2 {
   width: 120px;
   position: absolute;
   right: 12px;
-  top:-34px;
+  top: -34px;
   z-index: -1;
   rotate: 90deg;
 }
-

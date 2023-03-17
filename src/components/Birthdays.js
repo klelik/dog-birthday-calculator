@@ -1,5 +1,5 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React from "react";
+import { motion } from "framer-motion";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -9,7 +9,7 @@ const containerVariants = {
     transition: {
       staggerChildren: 0.2,
       duration: 0.8,
-      ease: 'easeOut',
+      ease: "easeOut",
     },
   },
 };
@@ -26,9 +26,9 @@ const childrenVariants = {
     x: 0,
     transition: {
       duration: 0.8,
-      type: 'spring',
+      type: "spring",
       stiffness: 120,
-      ease: 'easeOut',
+      ease: "easeOut",
       damping: 20,
     },
   },
@@ -41,10 +41,20 @@ export default function Birthdays({ name, datesArr }) {
   return (
     <>
       <p className="title is-3 mt-4 mb-2">Upcoming birthdays for {name} 🐶:</p>
-      <motion.div className="dates" variants={containerVariants} initial="hidden" animate="visible">
+      <motion.div
+        className="dates"
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+      >
         {datesArr.map((date, index) => (
-          <motion.p key={index} className="subtitle is-4 mb-2" variants={childrenVariants}>
-            {date}
+          <motion.p
+            key={index}
+            className="subtitle is-4 mb-2"
+            variants={childrenVariants}
+          >
+            {/* dates.push({ date: dateformated, age: numBeforeBday + i }); */}
+            {date.date} :  {date.age} years old
           </motion.p>
         ))}
       </motion.div>
